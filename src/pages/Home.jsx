@@ -162,13 +162,32 @@ function filterByTotalSaved(lowerRange, upperRange) {
   return users;
 }
 
+//this function returns the array of user with the specific range of average view
+function filterByAverageView(minimumView, maximumView) {
+  let users = [];
+
+  for (const user of data) {
+    let count = 0;
+    let view = 0;
+    for (const post of user.posts_info) {
+      view += post.views;
+      count++;
+    }
+
+    //function to calculate the average view
+    let averageView = view / count;
+
+    if (averageView >= minimumView && averageView <= maximumView) {
+      users.push(user.user_profile);
+    }
+  }
+
+  console.log(users);
+  return users;
+}
+
 function Home() {
-  // filterCountry();
-  // filterTiktokFollowers(400, 10000);
-  // filterTikTokEmail();
-  // filterByPostCount(5, 10);
-  // filterByTotalLikes(1000, 3000);
-  // filterByTotalViews(20000, 22000);
+  filterByAverageView(1000, 90000);
 
   return <></>;
 }
