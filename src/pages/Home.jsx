@@ -15,7 +15,7 @@ function filterCountry() {
 }
 
 //filterTiktokFollowers returns the users from ranges of likes
-function filterTiktokFollowers(lowerRange, upperRange) {
+function filterTiktokFollowers(data, lowerRange, upperRange) {
   let users = [];
 
   for (const user of data) {
@@ -23,7 +23,7 @@ function filterTiktokFollowers(lowerRange, upperRange) {
       user.user_profile.tiktok_followers >= lowerRange &&
       user.user_profile.tiktok_followers <= upperRange
     ) {
-      users.push(user.user_profile);
+      users.push(user);
     }
   }
   console.log(users);
@@ -31,12 +31,12 @@ function filterTiktokFollowers(lowerRange, upperRange) {
 }
 
 //filterTikTokEmail returns the users who have tiktok email (useless)
-function filterTikTokEmail() {
+function filterTikTokEmail(data) {
   let users = [];
 
   for (const user of data) {
     if (user.user_profile.tiktok_email === true) {
-      users.push(user.user_profile);
+      users.push(user);
     }
   }
   console.log(users);
@@ -44,7 +44,7 @@ function filterTikTokEmail() {
 }
 
 //filterByPostCount returns the users who have
-function filterByPostCount(lowerRange, upperRange) {
+function filterByPostCount(data, lowerRange, upperRange) {
   let users = [];
 
   for (const user of data) {
@@ -52,14 +52,14 @@ function filterByPostCount(lowerRange, upperRange) {
       user.posts_info.length >= lowerRange &&
       user.posts_info.length <= upperRange
     ) {
-      users.push(user.user_profile);
+      users.push(user);
     }
   }
   console.log(users);
   return users;
 }
 
-function filterByTotalLikes(lowerRange, upperRange) {
+function filterByTotalLikes(data, lowerRange, upperRange) {
   let users = [];
 
   for (const user of data) {
@@ -68,7 +68,7 @@ function filterByTotalLikes(lowerRange, upperRange) {
       totalLike += post.likes;
     }
     if (totalLike >= lowerRange && totalLike <= upperRange) {
-      users.push(user.user_profile);
+      users.push(user);
     }
   }
 
@@ -76,7 +76,7 @@ function filterByTotalLikes(lowerRange, upperRange) {
   return users;
 }
 
-function filterByTotalViews(lowerRange, upperRange) {
+function filterByTotalViews(data, lowerRange, upperRange) {
   let users = [];
 
   for (const user of data) {
@@ -85,7 +85,7 @@ function filterByTotalViews(lowerRange, upperRange) {
       totalViews += post.views;
     }
     if (totalViews >= lowerRange && totalViews <= upperRange) {
-      users.push(user.user_profile);
+      users.push(user);
     }
   }
 
@@ -93,7 +93,7 @@ function filterByTotalViews(lowerRange, upperRange) {
   return users;
 }
 
-function filterByTotalShares(lowerRange, upperRange) {
+function filterByTotalShares(data, lowerRange, upperRange) {
   let users = [];
 
   for (const user of data) {
@@ -102,7 +102,7 @@ function filterByTotalShares(lowerRange, upperRange) {
       totalShares += post.shares;
     }
     if (totalShares >= lowerRange && totalShares <= upperRange) {
-      users.push(user.user_profile);
+      users.push(user);
     }
   }
 
@@ -110,7 +110,7 @@ function filterByTotalShares(lowerRange, upperRange) {
   return users;
 }
 
-function filterByTotalShares_WhatsApp(lowerRange, upperRange) {
+function filterByTotalShares_WhatsApp(data, lowerRange, upperRange) {
   let users = [];
 
   for (const user of data) {
@@ -119,7 +119,7 @@ function filterByTotalShares_WhatsApp(lowerRange, upperRange) {
       totalShares += post.shares_whatsapp;
     }
     if (totalShares >= lowerRange && totalShares <= upperRange) {
-      users.push(user.user_profile);
+      users.push(user);
     }
   }
 
@@ -127,7 +127,7 @@ function filterByTotalShares_WhatsApp(lowerRange, upperRange) {
   return users;
 }
 
-function filterByTotalComments(lowerRange, upperRange) {
+function filterByTotalComments(data, lowerRange, upperRange) {
   let users = [];
 
   for (const user of data) {
@@ -136,7 +136,7 @@ function filterByTotalComments(lowerRange, upperRange) {
       totalComments += post.comments;
     }
     if (totalComments >= lowerRange && totalComments <= upperRange) {
-      users.push(user.user_profile);
+      users.push(user);
     }
   }
 
@@ -144,7 +144,7 @@ function filterByTotalComments(lowerRange, upperRange) {
   return users;
 }
 
-function filterByTotalSaved(lowerRange, upperRange) {
+function filterByTotalSaved(data, lowerRange, upperRange) {
   let users = [];
 
   for (const user of data) {
@@ -154,7 +154,7 @@ function filterByTotalSaved(lowerRange, upperRange) {
     }
 
     if (totalSaved >= lowerRange && totalSaved <= upperRange) {
-      users.push(user.user_profile);
+      users.push(user);
     }
   }
 
@@ -163,7 +163,7 @@ function filterByTotalSaved(lowerRange, upperRange) {
 }
 
 //this function returns the array of user with the specific range of average view
-function filterByAverageView(minimumView, maximumView) {
+function filterByAverageView(data, minimumView, maximumView) {
   let users = [];
 
   for (const user of data) {
@@ -178,7 +178,7 @@ function filterByAverageView(minimumView, maximumView) {
     let averageView = view / count;
 
     if (averageView >= minimumView && averageView <= maximumView) {
-      users.push(user.user_profile);
+      users.push(user);
     }
   }
 
@@ -186,10 +186,56 @@ function filterByAverageView(minimumView, maximumView) {
   return users;
 }
 
-function Home() {
-  filterByAverageView(1000, 90000);
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark");
+}
 
-  return <></>;
+function Home() {
+  return (
+    <>
+      <div className=" w-screen min-h-screen flex-row dark:bg-black bg-gradient-to-tl from-[#9F0D7F] to-[#241468]">
+        <div className="flex-row absolute left-6 top-5 dark:text-white">
+          <h1 className="text-5xl font-extrabold mb-10 block dark:text-white">
+            Insights
+            <br />
+            Engine.
+          </h1>
+          <div
+            onClick={() => {}}
+            className="bg-[#241468] hover:animate-pulse text-center rounded-3xl m-5 shadow-2xl py-7 text-3xl font-extrabold"
+          >
+            Home
+          </div>
+          <div
+            onClick={() => {}}
+            className="bg-[#241468] hover:animate-pulse text-center rounded-3xl m-5 shadow-2xl py-7 text-3xl font-extrabold"
+          >
+            Users
+          </div>
+        </div>
+
+        {/* github icon
+        <div className="absolute right-3 top-3">
+          <i className="devicon-github-original text-5xl dark:text-white"></i>
+        </div> */}
+
+        {/* Toggle Button */}
+        {/* <button
+          onClick={() => {
+            toggleTheme();
+          }}
+          className="fixed right-3 bottom-3 rounded-full p-5 hover:bg-stone-700"
+        >
+          Toggle
+        </button> */}
+
+        {/* footer */}
+        <footer className="absolute right-0 bottom-0 p-2 dark:text-white font-bold ">
+          <p>© Luan Nguyen</p>
+        </footer>
+      </div>
+    </>
+  );
 }
 
 export default Home;
