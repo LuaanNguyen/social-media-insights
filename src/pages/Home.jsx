@@ -193,31 +193,78 @@ function toggleTheme() {
 function Home() {
   return (
     <>
-      <div className=" w-screen min-h-screen flex-row dark:bg-black bg-gradient-to-tl from-[#9F0D7F] to-[#241468]">
-        <div className="flex-row absolute left-6 top-5 dark:text-white">
-          <h1 className="text-5xl font-extrabold mb-10 block dark:text-white">
+      <div className=" w-screen min-h-screen flex-row  bg-gradient-to-tl from-[#9F0D7F] to-[#241468]">
+        <div className="flex-row absolute left-6 top-5 text-white">
+          <h1 className="text-5xl font-extrabold mb-10 block text-white">
             Insights
             <br />
             Engine.
           </h1>
+
+          <hr className=" w-48 h-1 mx-auto my-4 bg-[#9F0D7F] border-0 rounded md:my-10 "></hr>
+
           <div
             onClick={() => {}}
-            className="bg-[#241468] hover:animate-pulse text-center rounded-3xl m-5 shadow-2xl py-7 text-3xl font-extrabold"
+            className="bg-[#241468] hover:animate-pulse text-center rounded-3xl m-6 shadow-2xl py-7 text-2xl font-bold"
           >
             Home
           </div>
           <div
             onClick={() => {}}
-            className="bg-[#241468] hover:animate-pulse text-center rounded-3xl m-5 shadow-2xl py-7 text-3xl font-extrabold"
+            className="bg-[#241468] hover:animate-pulse text-center rounded-3xl m-6 shadow-2xl py-7 text-2xl font-bold"
           >
             Users
           </div>
         </div>
 
-        {/* github icon
-        <div className="absolute right-3 top-3">
-          <i className="devicon-github-original text-5xl dark:text-white"></i>
-        </div> */}
+        <form className="max-w-md mx-auto ">
+          <label
+            htmlFor="default-search"
+            className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+          >
+            Search
+          </label>
+          <div className="relative top-5">
+            <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none rounded-full">
+              <svg
+                className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                />
+              </svg>
+            </div>
+            <input
+              type="search"
+              id="default-search"
+              className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Search Countries..."
+              required
+            />
+            <button
+              type="submit"
+              className="text-white absolute end-2.5 bottom-2.5 bg-[#9F0D7F] hover:bg-[#241468] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Search
+            </button>
+          </div>
+        </form>
+
+        {/*icons */}
+        <div className="absolute right-5 top-3">
+          <i className="devicon-github-original text-4xl text-white"></i>
+        </div>
+        <div className="absolute right-20 top-3">
+          <i className="devicon-linkedin-plain text-4xl text-white"></i>
+        </div>
 
         {/* Toggle Button */}
         {/* <button
@@ -230,7 +277,7 @@ function Home() {
         </button> */}
 
         {/* footer */}
-        <footer className="absolute right-0 bottom-0 p-2 dark:text-white font-bold ">
+        <footer className="absolute right-0 bottom-0 p-2 font-bold text-white">
           <p>© Luan Nguyen</p>
         </footer>
       </div>
