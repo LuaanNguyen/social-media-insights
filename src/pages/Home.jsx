@@ -1,4 +1,6 @@
 import data from "../data.json";
+import { Chart as ChartJS } from "chart.js/auto";
+import { Bar, Doughnut, Line } from "react-chartjs-2";
 
 //filterCountru returns the users from different countries
 function filterCountry() {
@@ -193,7 +195,7 @@ function toggleTheme() {
 function Home() {
   return (
     <>
-      <div className=" w-screen min-h-screen flex-row  bg-gradient-to-tl from-[#9F0D7F] to-[#241468]">
+      <div className="relative w-screen min-h-screen flex-row  bg-gradient-to-tl from-[#9F0D7F] to-[#241468]">
         <div className="flex-row absolute left-6 top-5 text-white">
           <h1 className="text-5xl font-extrabold mb-10 block text-white">
             Insights
@@ -264,6 +266,35 @@ function Home() {
         </div>
         <div className="absolute right-20 top-3">
           <i className="devicon-linkedin-plain text-4xl text-white"></i>
+        </div>
+
+        <div className="flex absolute top-[20%] left-[30%]">
+          <div className="relative ">
+            <Bar
+              data={{
+                labels: ["A", "B", "C"],
+                datasets: [
+                  {
+                    label: "Revenue",
+                    data: [200, 300, 400],
+                    backgroundColor: "#ffffff",
+                  },
+                  {
+                    label: "Loss",
+                    data: [90, 80, 70],
+                    backgroundColor: [
+                      "rgba(43, 63, 229, 0.8)",
+                      "rgba(250, 192, 19, 0.8)",
+                      "rgba(253, 135, 135, 0.8)",
+                    ],
+                  },
+                ],
+              }}
+              height="500px"
+              width="600px"
+              options={{ maintainAspectRatio: false }}
+            />
+          </div>
         </div>
 
         {/* Toggle Button */}
