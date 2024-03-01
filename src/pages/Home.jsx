@@ -210,7 +210,7 @@ function Home() {
           <div className="absolute right-[25%] text-white">
             <div
               onClick={() => {}}
-              className=" text-center  m-4  py-3 text-2xl font-bold cursor-pointer"
+              className=" text-center m-4  py-3 text-2xl font-bold cursor-pointer"
             >
               Home
             </div>
