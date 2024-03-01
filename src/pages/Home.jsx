@@ -198,38 +198,33 @@ function Home() {
       <div className="relative w-screen min-h-screen  bg-gradient-to-tl from-[#9F0D7F] to-[#241468]">
         <header className="flex-col">
           <div className="absolute left-6 top-5 text-white">
-            <h1 className="text-5xl font-extrabold mb-10 block text-white">
+            <h1 className="lg:text-5xl md:text-4xl sm:text-2xl font-extrabold mb-10 block text-white ">
               Insights
               <br />
               Engine.
             </h1>
           </div>
 
-          <hr className="absolute top-[7%] left-[15%] w-[84%] h-0.5 mx-auto my-5 bg-gradient-to-tl from-[#241468] bg-[#9F0D7F] border-0 rounded md:my-10 "></hr>
+          {/* Horizonatal Line */}
+          {/* <hr className="absolute top-[10%] w-[%] h-0.5 mx-auto my-5 bg-gradient-to-tl from-[#241468] bg-[#9F0D7F] border-0 rounded md:my-10 "></hr> */}
 
-          <div className="absolute right-[25%] text-white">
-            <div
-              onClick={() => {}}
-              className=" text-center m-4  py-3 text-2xl font-bold cursor-pointer"
-            >
-              Home
+          <div className="lg:text-2xl hidden md:block sm:block text-white font-semibold cursor-pointer text-center ">
+            <div className="absolute right-[15%]">
+              <div onClick={() => {}} className="m-4 py-3">
+                Home
+              </div>
+            </div>
+
+            <div className="absolute right-[8%]">
+              <div onClick={() => {}} className="m-4  py-3">
+                Users
+              </div>
             </div>
           </div>
 
-          <div className="absolute right-[15%] text-white">
-            <div
-              onClick={() => {}}
-              className=" text-center  m-4  py-3 text-2xl font-bold cursor-pointer"
-            >
-              Users
-            </div>
-          </div>
-
-          <form className="max-w-md m-auto ">
-            <label
-              htmlFor="default-search"
-              className="mb-2 text-sm font-medium text-white sr-only"
-            >
+          {/* Search bar */}
+          <form className="absolute size-6/12 left-[25%] m-auto">
+            <label className="mb-2 text-sm md:font-medium sm:font-small text-white sr-only">
               Search
             </label>
             <div className="relative top-5">
@@ -270,45 +265,53 @@ function Home() {
           <div className="absolute right-5 top-5">
             <i
               onClick={() => {}}
-              className="devicon-github-original text-5xl text-white cursor-pointer hover:animate-pulse"
+              className="devicon-github-original text-4xl  text-white cursor-pointer hover:animate-pulse"
             ></i>
           </div>
-          {/* <div className="absolute right-20 top-3">
-            <i
-              onClick={() => {}}
-              className="devicon-linkedin-plain text-5xl text-white cursor-pointer hover:animate-pulse"
-            ></i>
-          </div> */}
         </header>
 
-        {/* graphs */}
-        {/* <div className="flex absolute top-[20%] left-[30%]">
-          <div className="relative ">
-            <Bar
-              data={{
-                labels: ["A", "B", "C"],
-                datasets: [
-                  {
-                    label: "Revenue",
-                    data: [200, 300, 400],
-                  },
-                  {
-                    label: "Loss",
-                    data: [90, 80, 70],
-                    backgroundColor: [
-                      "rgba(43, 63, 229, 0.8)",
-                      "rgba(250, 192, 19, 0.8)",
-                      "rgba(253, 135, 135, 0.8)",
+        <div className="absolute bottom-0 h-[85%] w-[100%] ">
+          <div className="shadow-2xl rounded-3xl h-[90%] grid grid-col-3 grid-flow-col gap-5 mx-[10%] my-[2%] drop-shadow-2xl  border border-white bg-gradient-to-tl from-[#b5a2b9] to-[#fff7fc]">
+            {/* <div className="flex self-auto">
+              <div className="relative">
+                <Doughnut
+                  data={{
+                    labels: ["C", "B", "C"],
+                    datasets: [
+                      {
+                        label: "Revenue",
+                        data: [200, 300, 400],
+                      },
+                      {
+                        label: "Loss",
+                        data: [90, 80, 70],
+                        backgroundColor: [
+                          "rgba(43, 63, 229, 0.8)",
+                          "rgba(250, 192, 19, 0.8)",
+                          "rgba(253, 135, 135, 0.8)",
+                        ],
+                      },
                     ],
-                  },
-                ],
-              }}
-              height="500px"
-              width="600px"
-              options={{ maintainAspectRatio: false }}
-            />
+                  }}
+                  height="1000px"
+                  width="1000px"
+                  options={{
+                    maintainAspectRatio: false,
+                    plugins: {
+                      legend: {
+                        labels: {
+                          color: "white",
+                        },
+                      },
+                    },
+                  }}
+                />
+              </div>
+            </div> */}
           </div>
-        </div> */}
+        </div>
+
+        {/* graphs */}
 
         {/* Toggle Button */}
         {/* <button
