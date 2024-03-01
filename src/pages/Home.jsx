@@ -271,47 +271,65 @@ function Home() {
         </header>
 
         <div className="absolute bottom-0 h-[85%] w-[100%] ">
-          <div className="shadow-2xl rounded-3xl h-[90%] grid grid-col-3 grid-flow-col gap-5 mx-[10%] my-[2%] drop-shadow-2xl  border border-white bg-gradient-to-tl from-[#b5a2b9] to-[#fff7fc]">
-            {/* <div className="flex self-auto">
-              <div className="relative">
-                <Doughnut
-                  data={{
-                    labels: ["C", "B", "C"],
-                    datasets: [
-                      {
-                        label: "Revenue",
-                        data: [200, 300, 400],
-                      },
-                      {
-                        label: "Loss",
-                        data: [90, 80, 70],
-                        backgroundColor: [
-                          "rgba(43, 63, 229, 0.8)",
-                          "rgba(250, 192, 19, 0.8)",
-                          "rgba(253, 135, 135, 0.8)",
-                        ],
-                      },
-                    ],
-                  }}
-                  height="1000px"
-                  width="1000px"
-                  options={{
-                    maintainAspectRatio: false,
-                    plugins: {
-                      legend: {
-                        labels: {
-                          color: "white",
-                        },
-                      },
-                    },
-                  }}
-                />
+          <div className="shadow-2xl rounded-3xl h-[90%] grid grid-flow-col mx-[10%] my-[2%] drop-shadow-2xl  border border-[#531b58] bg-gradient-to-tl from-[#b5a2b9] to-[#fff7fc]">
+            <div className="grid gap-8 grid-cols-2 grid-rows-2 place-content-around">
+              <div className="relative bg-black drop-shadow-sm m-5 rounded-3xl bg-gradient-to-tl from-[#710c93] to-[#e781d1] border border-white">
+                <h1 className="text-white text-2xl font-semibold absolute left-5 top-5 ">
+                  🌏 Country
+                </h1>
               </div>
-            </div> */}
+              <div className="bg-black  drop-shadow-sm m-10 row-span-2 rounded-3xl bg-gradient-to-tl from-[#9F0D7F] to-[#241468] border border-white">
+                <h1 className="text-white text-2xl font-semibold absolute left-5 top-5">
+                  👁️ Average Views
+                </h1>
+              </div>
+              <div className="bg-black drop-shadow-sm m-5 rounded-3xl bg-gradient-to-tl from-[#9F0D7F] to-[#241468] border border-white">
+                <h1 className="text-white text-2xl font-semibold absolute left-5 top-5">
+                  👍Average Likes
+                </h1>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* graphs */}
+        {/* <div className="flex self-auto">
+          <div className="relative">
+            <Doughnut
+              data={{
+                labels: ["C", "B", "C"],
+                datasets: [
+                  {
+                    label: "Revenue",
+                    data: [200, 300, 400],
+                  },
+                  {
+                    label: "Loss",
+                    data: [90, 80, 70],
+                    backgroundColor: [
+                      "rgba(43, 63, 229, 0.8)",
+                      "rgba(250, 192, 19, 0.8)",
+                      "rgba(253, 135, 135, 0.8)",
+                    ],
+                  },
+                ],
+              }}
+              height="1000px"
+              width="1000px"
+              options={{
+                maintainAspectRatio: false,
+                plugins: {
+                  legend: {
+                    labels: {
+                      color: "white",
+                    },
+                  },
+                },
+              }}
+            />
+          </div>
+        </div>
+         */}
 
         {/* Toggle Button */}
         {/* <button
